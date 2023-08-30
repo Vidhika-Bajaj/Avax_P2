@@ -1,0 +1,40 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "E:\\My Data\\Desktop\\M_M3_P2\\bhai-ka\\contracts\\ATM.sol": {
+      "lastModificationDate": 1693150983721,
+      "contentHash": "e7e10aa1be076c7e2cdc23ecdbefe50b",
+      "sourceName": "contracts/ATM.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ATM"
+      ]
+    }
+  }
+}
