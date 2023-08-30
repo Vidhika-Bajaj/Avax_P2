@@ -1,7 +1,5 @@
-
-# Smart Contract Managment
-This repository contains a Solidity smart contract called BankATM which provides basic banking functionalities like deposit, withdraw, and getting the account balance. The contract also includes a frontend implementation to interact with the contract on the Ethereum blockchain.
-
+# Bajaj ATM contract
+A solidity smart contract called BankATM that provides basic banking services including deposits, withdrawals, and account balance retrieval is included in this repository. The contract also contains a frontend interface for communicating with the contract on the Ethereum network.
 
 
 
@@ -10,24 +8,33 @@ This repository contains a Solidity smart contract called BankATM which provides
 ## Contract Functionality
 
 
-BankATM Smart Contract
-This repository contains a Solidity smart contract called BankATM which provides basic banking functionalities like deposit, withdraw, and getting the account balance. The contract also includes a frontend implementation to interact with the contract on the Ethereum blockchain.
+Smart Contract for Bajaj BankATM:
+A solidity smart contract called BankATM that provides basic banking services including deposits, withdrawals, and account balance retrieval is included in this repository. The contract also contains a frontend interface for communicating with the contract on the Ethereum network.
 
-Smart Contract Details
-The BankATM contract has the following functions:
+Details about Smart Contract 
+The Bajaj BankATM contract has the following functions:
 
-1. deposit(uint256 _amount): Allows the owner to deposit Ether into the account.
-2. withdraw(uint256 _withdrawAmount): Allows the owner to withdraw Ether from the account.
-3. getBalance(): Returns the current account balance.
-4. getOwner(): Returns the address of the account owner.
+1. depositBalance(): This function allows users to deposit funds into the contract. The amount must be greater than 0, and the sender must be the owner of the contract.
+2. withdrawBalance(): This function allows users to withdraw funds from the contract. The amount must be greater than 0, and the sender must have enough funds in their balance.
+3. burnBalance(): This function allows the owner of the contract to burn funds. The amount must be greater than 0, and the sender must be the owner of the contract.
+4. showBalance(): This function allows users to view their balance in the contract.
+5. getContractBalance(): This function allows the owner of the contract to view the balance of the contract.
+
+The contract also has a few modifiers:
+1. onlyOwner(): This modifier ensures that only the owner of the contract can call the function.
+
+The contract uses a mapping to store the balance of each user. The mapping is indexed by the address of the user.
+
+The contract also emits events to track the following activities:
+1. Balance deposited
+2. Balance withdrawn
+3. Balance burned
+
 ## DEPLOYMENT
-Create a hardhat project and write the contract in it and then run your blockchain connect and deoloy it with goerli testnet
-now write the code for frontend and connect backend with frontend with help of the artifacts abi
-Now run the fronted and check all the functionality 
-
-Note: Every DEPLOYMENT you have a new contract address change it in the contract adress column in fronted
-## Install
-hardhat installation
+Then, write the code for the front end and use the artefacts abi to connect the back end with the front end. Create a hardhat project, add a contract to it, run your blockchain through the Goerli Testnet, and finally, write the code for the back end.
+Run the fronted right away to check every capability. 
+Additionally, amend the contract address field up front if your address changes during a DEPLOYMENT.
+## Hardhat Installing
 
 1. npm install --save-dev hardhat
 
@@ -46,13 +53,17 @@ hardhat installation
 
 8. Now entere your contract address
    
-9. enter you abi 
-10. run your project
-11. Test the project by connecting your wallet
-12. Make sure you have the testnet amount present in wallet whatever the network you are deploying
-
-
+9. enter you abi
+    
+11. run your project
+    
+13. Test the project by connecting your wallet
+    
+15. Make sure you have the testnet amount present in wallet whatever the network you are deploying
 
 
 ## Author
-Kuldeep Yadav
+Vidhika Bajaj
+
+## License
+This project is licensed under the MIT License
