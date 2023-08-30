@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Contract Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            /* Replace 'your-image-url-here' with your actual image URL */
+            background-image: url('data:image/jpeg;base64,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');
+            background-size: cover;
+        }
+
+        #header {
+            text-align: right;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            color: black;
+            border: 2px solid black;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        nav {
+            background-color: rgb(209, 230, 23);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        input[type="number"] {
+            padding: 5px;
+            margin-right: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+        }
+
+        button:hover {
+            background-color: darkred;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Vids ATM Contract</h1>
+    </div>
+
+    <nav>
+        <h2>Bajaj Bank </h2>
+    </nav>
+
+    <div class="container">
+        <div>
+            <h2>Your Address: <span id="userAddress"></span></h2>
+            <h2>Vids Contact Address: <span id="contractAddress"></span></h2>
+            <h2>Your Balance: <span id="userBalance"></span> ETH</h2>
+        </div>
+
+        <div class="section">
+            <h3>Deposit Balance</h3>
+            <input type="number" id="depositAmount" placeholder="Enter amount">
+            <button onclick="deposit()">Deposit</button>
+        </div>
+
+        <div class="section">
+            <h3>Withdraw Balance</h3>
+            <input type="number" id="withdrawAmount" placeholder="Enter amount">
+            <button onclick="withdraw()">Withdraw</button>
+        </div>
+
+        <div class="section">
+            <h3>Show Balance</h3>
+            <button onclick="showBalance()">Show Balance</button>
+            <p id="balanceDisplay"></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy;  Bajaj Bank 2023. Rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+    <script>
+        let web3;
+        let contract;
+
+        async function initWeb3() {
+            if (typeof window.ethereum !== 'undefined') {
+                web3 = new Web3(window.ethereum);
+                await window.ethereum.enable();
+
+                // Replace with your contract address and ABI
+                const contractAddress ='0xDd1e6296816ADc86dc3484f9525c3649355D9505';
+    const contractAbi = [
+		{
+		  "inputs": [],
+		  "stateMutability": "nonpayable",
+		  "type": "constructor"
+		},
+		{
+		  "anonymous": false,
+		  "inputs": [
+			{
+			  "indexed": true,
+			  "internalType": "address",
+			  "name": "account",
+			  "type": "address"
+			},
+			{
+			  "indexed": false,
+			  "internalType": "uint256",
+			  "name": "amount",
+			  "type": "uint256"
+			}
+		  ],
+		  "name": "BalanceBurned",
+		  "type": "event"
+		},
+		{
+		  "anonymous": false,
+		  "inputs": [
+			{
+			  "indexed": true,
+			  "internalType": "address",
+			  "name": "account",
+			  "type": "address"
+			},
+			{
+			  "indexed": false,
+			  "internalType": "uint256",
+			  "name": "amount",
+			  "type": "uint256"
+			}
+		  ],
+		  "name": "BalanceDeposited",
+		  "type": "event"
+		},
+		{
+		  "anonymous": false,
+		  "inputs": [
+			{
+			  "indexed": true,
+			  "internalType": "address",
+			  "name": "account",
+			  "type": "address"
+			},
+			{
+			  "indexed": false,
+			  "internalType": "uint256",
+			  "name": "amount",
+			  "type": "uint256"
+			}
+		  ],
+		  "name": "BalanceWithdrawn",
+		  "type": "event"
+		},
+		{
+		  "inputs": [
+			{
+			  "internalType": "uint256",
+			  "name": "amount",
+			  "type": "uint256"
+			}
+		  ],
+		  "name": "burnBalance",
+		  "outputs": [],
+		  "stateMutability": "nonpayable",
+		  "type": "function"
+		},
+		{
+		  "inputs": [],
+		  "name": "depositBalance",
+		  "outputs": [],
+		  "stateMutability": "payable",
+		  "type": "function"
+		},
+		{
+		  "inputs": [],
+		  "name": "getContractBalance",
+		  "outputs": [
+			{
+			  "internalType": "uint256",
+			  "name": "",
+			  "type": "uint256"
+			}
+		  ],
+		  "stateMutability": "view",
+		  "type": "function"
+		},
+		{
+		  "inputs": [],
+		  "name": "showBalance",
+		  "outputs": [
+			{
+			  "internalType": "uint256",
+			  "name": "",
+			  "type": "uint256"
+			}
+		  ],
+		  "stateMutability": "view",
+		  "type": "function"
+		},
+		{
+		  "inputs": [
+			{
+			  "internalType": "uint256",
+			  "name": "amount",
+			  "type": "uint256"
+			}
+		  ],
+		  "name": "withdrawBalance",
+		  "outputs": [],
+		  "stateMutability": "nonpayable",
+		  "type": "function"
+		}
+	  ];
+
+
+                contract = new web3.eth.Contract(contractAbi, contractAddress);
+
+                const accounts = await web3.eth.getAccounts();
+                const userAddress = accounts[0];
+
+                updateAddresses(userAddress, contractAddress);
+            } else {
+                console.log("Web3 not found. Please install MetaMask.");
+            }
+        }
+
+        async function updateAddresses(userAddress, contractAddress) {
+            document.getElementById('userAddress').textContent = userAddress;
+            document.getElementById('contractAddress').textContent = contractAddress;
+        }
+
+        async function deposit() {
+            const depositAmount = document.getElementById('depositAmount').value;
+            if (!depositAmount) return;
+
+            const accounts = await web3.eth.getAccounts();
+            const userAddress = accounts[0];
+
+            await contract.methods.depositBalance().send({
+                from: userAddress,
+                value: web3.utils.toWei(depositAmount, 'ether')
+            });
+
+            showBalance();
+        }
+
+        async function withdraw() {
+            const withdrawAmount = document.getElementById('withdrawAmount').value;
+            if (!withdrawAmount) return;
+
+            const accounts = await web3.eth.getAccounts();
+            const userAddress = accounts[0];
+
+            await contract.methods.withdrawBalance(web3.utils.toWei(withdrawAmount, 'ether')).send({ from: userAddress });
+
+            showBalance();
+        }
+
+        async function showBalance() {
+            const accounts = await web3.eth.getAccounts();
+            const userAddress = accounts[0];
+
+            const balance = await contract.methods.showBalance().call({ from: userAddress });
+            document.getElementById('userBalance').textContent = web3.utils.fromWei(balance, 'ether');
+            document.getElementById('balanceDisplay').textContent = `Your balance is: ${web3.utils.fromWei(balance, 'ether')} ETH`;
+        }
+
+        window.addEventListener('load', async () => {
+            await initWeb3();
+        });
+    </script>
+</body>
+</html>
